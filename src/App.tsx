@@ -414,8 +414,11 @@ export default function App() {
                       <Heart className="w-5 h-5 premium-card-icon" />
                       Girlfriend Premium Package
                     </CardTitle>
-                    <p className="text-[10px] premium-card-subtitle text-white">
-                      Babe, if you're checking this... you might be thinking about something more. 😉
+                    <p>
+                      <span className="text-[10px] premium-card-subtitle text-white">
+                        Babe, if you're checking this... you might be thinking about something more.
+                      </span>{" "}
+                      😉
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-4">
