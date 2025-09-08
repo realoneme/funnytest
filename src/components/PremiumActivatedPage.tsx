@@ -109,7 +109,9 @@ export function PremiumActivatedPage({ onBack }: PremiumActivatedPageProps) {
             <p className="text-white text-sm">
               🔓 <strong>Exclusive Access:</strong> Everything you've been thinking about...
             </p>
-            <p className="text-[#FF66CC] text-xs italic mt-2">(Yes, that too. We know what's on your mind. 💭)</p>
+            <p className="text-[#FF66CC] text-xs mt-2">
+              (<span className="italic">Yes, that too. We know what's on your mind.</span> 💭)
+            </p>
           </div>
         </motion.div>
 
