@@ -7,15 +7,10 @@ interface PremiumActivatedPageProps {
   onBack?: () => void;
 }
 
-export function PremiumActivatedPage({
-  onBack,
-}: PremiumActivatedPageProps) {
-  const [showProviderNote, setShowProviderNote] =
-    useState(false);
-  const [showGoldenMessage, setShowGoldenMessage] =
-    useState(false);
-  const [continueClickCount, setContinueClickCount] =
-    useState(0);
+export function PremiumActivatedPage({ onBack }: PremiumActivatedPageProps) {
+  const [showProviderNote, setShowProviderNote] = useState(false);
+  const [showGoldenMessage, setShowGoldenMessage] = useState(false);
+  const [continueClickCount, setContinueClickCount] = useState(0);
   const [popupTrigger, setPopupTrigger] = useState(0);
 
   const snarkyMessages = [
@@ -50,8 +45,7 @@ export function PremiumActivatedPage({
       className="min-h-screen w-full px-6 py-12 flex items-center justify-center animate-in fade-in duration-500"
       style={{
         background: "#000000",
-        backgroundImage:
-          "radial-gradient(circle at center, rgba(255, 102, 204, 0.15) 0%, transparent 70%)",
+        backgroundImage: "radial-gradient(circle at center, rgba(255, 102, 204, 0.15) 0%, transparent 70%)",
       }}
     >
       <div className="max-w-md mx-auto text-center space-y-8">
@@ -68,9 +62,7 @@ export function PremiumActivatedPage({
               boxShadow: "0 0 30px rgba(255, 102, 204, 0.4)",
             }}
           >
-            <span className="text-[#FF66CC] font-semibold">
-              ✨ PREMIUM ACTIVATED ✨
-            </span>
+            <span className="text-[#FF66CC] font-semibold">✨ PREMIUM ACTIVATED ✨</span>
           </div>
         </motion.div>
 
@@ -97,9 +89,7 @@ export function PremiumActivatedPage({
           <p className="text-gray-300 text-lg leading-relaxed">
             You've unlocked a deeper connection.
             <br />
-            <span className="text-[#FF66CC] italic">
-              Things just got... interesting. 😉
-            </span>
+            <span className="text-[#FF66CC] text-sm">Things just got... interesting.</span>
           </p>
         </motion.div>
 
@@ -117,12 +107,9 @@ export function PremiumActivatedPage({
             }}
           >
             <p className="text-white text-sm">
-              🔓 <strong>Exclusive Access:</strong> Everything
-              you've been thinking about...
+              🔓 <strong>Exclusive Access:</strong> Everything you've been thinking about...
             </p>
-            <p className="text-[#FF66CC] text-xs italic mt-2">
-              (Yes, that too. We know what's on your mind. 💭)
-            </p>
+            <p className="text-[#FF66CC] text-xs italic mt-2">(Yes, that too. We know what's on your mind. 💭)</p>
           </div>
         </motion.div>
 
@@ -157,8 +144,7 @@ export function PremiumActivatedPage({
                 className="italic leading-relaxed"
                 style={{
                   color: "#FFD700",
-                  textShadow:
-                    "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
+                  textShadow: "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
                   fontSize: "15px",
                 }}
               >
@@ -168,8 +154,7 @@ export function PremiumActivatedPage({
                 className="italic leading-relaxed"
                 style={{
                   color: "#FFD700",
-                  textShadow:
-                    "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
+                  textShadow: "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
                   fontSize: "15px",
                 }}
               >
@@ -179,20 +164,17 @@ export function PremiumActivatedPage({
                 className="italic leading-relaxed"
                 style={{
                   color: "#FFD700",
-                  textShadow:
-                    "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
+                  textShadow: "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
                   fontSize: "15px",
                 }}
               >
-                No point flexin' in the mirror if you're too
-                scared to say a word.
+                No point flexin' in the mirror if you're too scared to say a word.
               </p>
               <p
                 className="italic leading-relaxed"
                 style={{
                   color: "#FFD700",
-                  textShadow:
-                    "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
+                  textShadow: "0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3)",
                   fontSize: "15px",
                 }}
               >
@@ -216,19 +198,12 @@ export function PremiumActivatedPage({
                 boxShadow: "0 0 20px rgba(255, 102, 204, 0.2)",
               }}
             >
-              <div className="text-[#FF66CC] text-xs font-medium mb-2">
-                note from the provider:
-              </div>
+              <div className="text-[#FF66CC] text-xs font-medium mb-2">note from the provider:</div>
               <div className="text-white text-sm leading-relaxed space-y-2">
-                <p>
-                  sorry, I'm not really a big fan of touching
-                  others…
-                </p>
+                <p>sorry, I'm not really a big fan of touching others…</p>
                 <p>but I do like being touched or caressed.</p>
                 <div className="pt-2 border-t border-[#FF66CC]/20">
-                  <p className="text-gray-300 text-xs italic">
-                    still — non-sensual full-body massage only
-                  </p>
+                  <p className="text-gray-300 text-xs italic">still — non-sensual full-body massage only</p>
                 </div>
               </div>
             </div>
