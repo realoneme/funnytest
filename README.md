@@ -1,7 +1,7 @@
 
   # Design Cheeky Subscription Page
 
-  This is a app totally written by Figma Maker
+  This is an app totally written by Figma Maker
 
   ## Running the code
 
