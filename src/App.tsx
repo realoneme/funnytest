@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { Switch } from "./components/ui/switch";
 import { Heart, Star } from "lucide-react";
-import { toast, Toaster } from "sonner@2.0.3";
+import { toast, Toaster } from "sonner";
 import { motion } from "motion/react";
 import { imgLock } from "./imports/svg-b9r92";
 import { BasicResultsPage } from "./components/BasicResultsPage";
@@ -133,6 +133,23 @@ export default function App() {
     console.log("// Hello curious TyTy 👀");
     console.log("// Looking for secrets?");
     console.log("// Maybe you should just... upgrade your plan instead 😏");
+  }, []);
+
+  // Safari mobile viewport fix
+  useEffect(() => {
+    const setViewportHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    setViewportHeight();
+    window.addEventListener("resize", setViewportHeight);
+    window.addEventListener("orientationchange", setViewportHeight);
+
+    return () => {
+      window.removeEventListener("resize", setViewportHeight);
+      window.removeEventListener("orientationchange", setViewportHeight);
+    };
   }, []);
 
   // Custom toast functions
@@ -315,6 +332,18 @@ export default function App() {
                         setTimeout(() => setCurrentPage("subscription"), 300);
                       }
                     }}
+                    onTouchStart={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                    onTouchEnd={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (currentPage === "landing") {
+                        setHideHeader(true);
+                        setTimeout(() => setCurrentPage("subscription"), 300);
+                      }
+                    }}
                     className="relative cursor-pointer transition-all duration-300 hover:scale-105"
                     style={{
                       animation: "heartbeat 1.5s ease-in-out infinite",
@@ -397,6 +426,16 @@ export default function App() {
                     trackInteraction();
                     setShowPremiumContent(true);
                   }}
+                  onTouchStart={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }}
+                  onTouchEnd={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    trackInteraction();
+                    setShowPremiumContent(true);
+                  }}
                   className="text-white bg-transparent border border-[#88CCFF] hover:bg-[#88CCFF] hover:text-[#222222] transition-all duration-300"
                 >
                   check more...
@@ -434,12 +473,33 @@ export default function App() {
                 <div className="space-y-4 pt-6">
                   <Button
                     onClick={handleSubscribeToPremium}
+                    onTouchStart={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                    onTouchEnd={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleSubscribeToPremium();
+                    }}
                     className="w-full premium-button-glow text-white border-none"
                   >
                     Subscribe to Premium
                   </Button>
 
-                  <Button onClick={handleStayOnBasic} className="w-full basic-button border-none hover:bg-gray-500">
+                  <Button
+                    onClick={handleStayOnBasic}
+                    onTouchStart={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                    onTouchEnd={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleStayOnBasic();
+                    }}
+                    className="w-full basic-button border-none hover:bg-gray-500"
+                  >
                     Sure, stay on Basic… and take a cold shower
                   </Button>
                 </div>

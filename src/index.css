@@ -2440,6 +2440,28 @@
     -webkit-touch-callout: none;
   }
 
+  /* Additional Safari mobile optimizations */
+  button,
+  .button,
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+  }
+
+  /* Prevent Safari address bar from showing on bottom interaction */
+  .subscription-container {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  /* Use custom viewport height to handle Safari address bar */
+  .min-h-screen {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
   .fade-in,
   .fade-in-0 {
     --tw-enter-opacity: 0;
